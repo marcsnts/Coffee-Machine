@@ -12,7 +12,8 @@
 		49700AD81E0AFC380008D903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49700AD61E0AFC380008D903 /* Main.storyboard */; };
 		49700ADA1E0AFC380008D903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49700AD91E0AFC380008D903 /* Assets.xcassets */; };
 		49700ADD1E0AFC380008D903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49700ADB1E0AFC380008D903 /* LaunchScreen.storyboard */; };
-		49700AE51E0AFCAD0008D903 /* Cartfile  in Resources */ = {isa = PBXBuildFile; fileRef = 49700AE41E0AFCAD0008D903 /* Cartfile  */; };
+		49700AE71E0B00790008D903 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 49700AE61E0B00790008D903 /* Cartfile */; };
+		49700AE91E0B01470008D903 /* Beverages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AE81E0B01470008D903 /* Beverages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		49700AD91E0AFC380008D903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49700ADC1E0AFC380008D903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49700ADE1E0AFC380008D903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49700AE41E0AFCAD0008D903 /* Cartfile  */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Cartfile "; sourceTree = "<group>"; };
+		49700AE61E0B00790008D903 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		49700AE81E0B01470008D903 /* Beverages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beverages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +42,7 @@
 		49700AC61E0AFC370008D903 = {
 			isa = PBXGroup;
 			children = (
-				49700AE41E0AFCAD0008D903 /* Cartfile  */,
+				49700AE61E0B00790008D903 /* Cartfile */,
 				49700AD11E0AFC380008D903 /* Coffee Machine */,
 				49700AD01E0AFC380008D903 /* Products */,
 			);
@@ -63,6 +65,7 @@
 				49700AD91E0AFC380008D903 /* Assets.xcassets */,
 				49700ADB1E0AFC380008D903 /* LaunchScreen.storyboard */,
 				49700ADE1E0AFC380008D903 /* Info.plist */,
+				49700AE81E0B01470008D903 /* Beverages.swift */,
 			);
 			path = "Coffee Machine";
 			sourceTree = "<group>";
@@ -129,8 +132,8 @@
 			files = (
 				49700ADD1E0AFC380008D903 /* LaunchScreen.storyboard in Resources */,
 				49700ADA1E0AFC380008D903 /* Assets.xcassets in Resources */,
+				49700AE71E0B00790008D903 /* Cartfile in Resources */,
 				49700AD81E0AFC380008D903 /* Main.storyboard in Resources */,
-				49700AE51E0AFCAD0008D903 /* Cartfile  in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49700AE91E0B01470008D903 /* Beverages.swift in Sources */,
 				49700AD51E0AFC380008D903 /* ViewController.swift in Sources */,
 				49700AD31E0AFC380008D903 /* AppDelegate.swift in Sources */,
 			);
