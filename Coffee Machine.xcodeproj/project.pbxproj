@@ -16,6 +16,9 @@
 		49700AE91E0B01470008D903 /* Beverages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AE81E0B01470008D903 /* Beverages.swift */; };
 		49700AED1E0B08B80008D903 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AEC1E0B08B80008D903 /* LandingPageViewController.swift */; };
 		49700AF01E0B09110008D903 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49700AEF1E0B09110008D903 /* SnapKit.framework */; };
+		49700AF71E0B0B0C0008D903 /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AF61E0B0B0C0008D903 /* DrinksViewController.swift */; };
+		49700AF91E0B0E370008D903 /* ModifiersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AF81E0B0E370008D903 /* ModifiersViewController.swift */; };
+		49700AFB1E0B10A40008D903 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49700AFA1E0B10A40008D903 /* Eureka.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		49700AE81E0B01470008D903 /* Beverages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beverages.swift; sourceTree = "<group>"; };
 		49700AEC1E0B08B80008D903 /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		49700AEF1E0B09110008D903 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		49700AF61E0B0B0C0008D903 /* DrinksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
+		49700AF81E0B0E370008D903 /* ModifiersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifiersViewController.swift; sourceTree = "<group>"; };
+		49700AFA1E0B10A40008D903 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49700AF01E0B09110008D903 /* SnapKit.framework in Frameworks */,
+				49700AFB1E0B10A40008D903 /* Eureka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,13 +73,12 @@
 			isa = PBXGroup;
 			children = (
 				49700AD21E0AFC380008D903 /* AppDelegate.swift */,
-				49700AD41E0AFC380008D903 /* ViewController.swift */,
+				49700AF31E0B0AAC0008D903 /* Classes */,
+				49700AF21E0B0AA30008D903 /* View Controllers */,
 				49700AD61E0AFC380008D903 /* Main.storyboard */,
 				49700AD91E0AFC380008D903 /* Assets.xcassets */,
 				49700ADB1E0AFC380008D903 /* LaunchScreen.storyboard */,
 				49700ADE1E0AFC380008D903 /* Info.plist */,
-				49700AE81E0B01470008D903 /* Beverages.swift */,
-				49700AEC1E0B08B80008D903 /* LandingPageViewController.swift */,
 			);
 			path = "Coffee Machine";
 			sourceTree = "<group>";
@@ -80,9 +86,29 @@
 		49700AEE1E0B09100008D903 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49700AFA1E0B10A40008D903 /* Eureka.framework */,
 				49700AEF1E0B09110008D903 /* SnapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49700AF21E0B0AA30008D903 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49700AD41E0AFC380008D903 /* ViewController.swift */,
+				49700AF61E0B0B0C0008D903 /* DrinksViewController.swift */,
+				49700AF81E0B0E370008D903 /* ModifiersViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		49700AF31E0B0AAC0008D903 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				49700AE81E0B01470008D903 /* Beverages.swift */,
+				49700AEC1E0B08B80008D903 /* LandingPageViewController.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +189,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Snapkit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
 			);
 			name = "Carthage Script";
 			outputPaths = (
@@ -180,6 +207,8 @@
 			files = (
 				49700AE91E0B01470008D903 /* Beverages.swift in Sources */,
 				49700AD51E0AFC380008D903 /* ViewController.swift in Sources */,
+				49700AF71E0B0B0C0008D903 /* DrinksViewController.swift in Sources */,
+				49700AF91E0B0E370008D903 /* ModifiersViewController.swift in Sources */,
 				49700AD31E0AFC380008D903 /* AppDelegate.swift in Sources */,
 				49700AED1E0B08B80008D903 /* LandingPageViewController.swift in Sources */,
 			);
