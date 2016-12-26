@@ -22,7 +22,6 @@
 		49700AF91E0B0E370008D903 /* ModifiersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AF81E0B0E370008D903 /* ModifiersViewController.swift */; };
 		49700AFB1E0B10A40008D903 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49700AFA1E0B10A40008D903 /* Eureka.framework */; };
 		49700AFD1E0B12050008D903 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AFC1E0B12050008D903 /* Constants.swift */; };
-		49700AFF1E0B13D40008D903 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AFE1E0B13D40008D903 /* UIHelper.swift */; };
 		49700B031E0B1E1E0008D903 /* BeverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49700B021E0B1E1E0008D903 /* BeverageCell.xib */; };
 		49700B081E0B1E880008D903 /* BeverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700B071E0B1E880008D903 /* BeverageCell.swift */; };
 		49700B0C1E10DA590008D903 /* Temporary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700B0B1E10DA590008D903 /* Temporary.swift */; };
@@ -46,7 +45,6 @@
 		49700AF81E0B0E370008D903 /* ModifiersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifiersViewController.swift; sourceTree = "<group>"; };
 		49700AFA1E0B10A40008D903 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		49700AFC1E0B12050008D903 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		49700AFE1E0B13D40008D903 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		49700B021E0B1E1E0008D903 /* BeverageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BeverageCell.xib; path = ../BeverageCell.xib; sourceTree = "<group>"; };
 		49700B071E0B1E880008D903 /* BeverageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeverageCell.swift; sourceTree = "<group>"; };
 		49700B0B1E10DA590008D903 /* Temporary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temporary.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 		49700B091E10CD9A0008D903 /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
-				49700AFE1E0B13D40008D903 /* UIHelper.swift */,
 				49700AFC1E0B12050008D903 /* Constants.swift */,
 				49700B0B1E10DA590008D903 /* Temporary.swift */,
 			);
@@ -262,7 +259,6 @@
 				49700AFD1E0B12050008D903 /* Constants.swift in Sources */,
 				49700AD31E0AFC380008D903 /* AppDelegate.swift in Sources */,
 				49700AED1E0B08B80008D903 /* LandingPageViewController.swift in Sources */,
-				49700AFF1E0B13D40008D903 /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

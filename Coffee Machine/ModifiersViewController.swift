@@ -55,6 +55,7 @@ class ModifiersViewController: FormViewController {
             }
             
             +++ Section("Add-ons") {
+                //Hide this section if cappuccino
                 $0.hidden = Condition.function(["Medium"], { form in
                     return selectedDrink == .Cappuccino ? true : false
                 })
@@ -62,20 +63,39 @@ class ModifiersViewController: FormViewController {
             <<< StepperRow("Sugar") {
                 $0.title = "Sugar"
                 $0.value = 0
+                //Hide if not coffee
+                $0.hidden = Condition.function(["Medium"], { form in
+                    return selectedDrink == .Coffee ? false : true
+                })
                 }.cellSetup { cell, row in
-                    cell.stepper.maximumValue = 5
-                    cell.stepper.minimumValue = 0
-                    cell.stepper.stepValue = 1
+                cell.stepper.maximumValue = 5
+                cell.stepper.minimumValue = 0
+                cell.stepper.stepValue = 1
+            }
+            <<< SelectRow("WhippedCream") {
+                $0.title = "Whipped cream"
+                $0.value = false
+                //Hide if not hot chocolate
+                $0.hidden = Condition.function(["Medium"], { form in
+                    return selectedDrink == .HotChocolate ? false : true
+                })
+            }.onCellSelection { cell, row in
+                self.updateSelectRow(cell: cell, row: row)
             }
          
         
         self.valuesDictionary = form.values()
     }
     
-    private func updateSizeRow(cell: SelectCell, row: SelectRow) {
-        self.deselectSizes()
+    
+    private func updateSelectRow(cell: SelectCell, row: SelectRow) {
         row.value = row.value == true ? false : true
         cell.update()
+    }
+    
+    private func updateSizeRow(cell: SelectCell, row: SelectRow) {
+        self.deselectSizes()
+        updateSelectRow(cell: cell, row: row)
         self.valuesDictionary = self.form.values()
     }
     
