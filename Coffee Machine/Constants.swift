@@ -10,11 +10,24 @@ import Foundation
 import UIKit
 
 class Constants {
-    static let DRINK_IMAGE_WIDTH = 75
-    static let DRINK_IMAGE_HEIGHT = 100
-    static let DRINK_IMAGE_SIZE = CGSize(width: Constants.DRINK_IMAGE_WIDTH, height: Constants.DRINK_IMAGE_HEIGHT)
-    static let DRINK_IMAGE_HORIZONTAL_PADDING = 15
-    static let DRINK_LABEL_FONT = UIFont.boldSystemFont(ofSize: 18)
-    static let DRINK_LABEL_FONT_COLOR = UIColor.black
-    static let DRINK_IMAGE_PADDING = 5
+//    static let DRINK_IMAGE_WIDTH = 75
+//    static let DRINK_IMAGE_HEIGHT = 100
+//    static let DRINK_IMAGE_SIZE = CGSize(width: Constants.DRINK_IMAGE_WIDTH, height: Constants.DRINK_IMAGE_HEIGHT)
+//    static let DRINK_IMAGE_HORIZONTAL_PADDING = 15
+//    static let DRINK_LABEL_FONT = UIFont.boldSystemFont(ofSize: 18)
+//    static let DRINK_LABEL_FONT_COLOR = UIColor.black
+//    static let DRINK_IMAGE_PADDING = 5
+    
+    static let CAPPUCCINO_SMALL_PRICE = 3.39
+    static let CAPPUCCINO_MEDIUM_PRICE = 4.39
+    static let CAPPUCCINO_LARGE_PRICE = 4.99
+    
+    static let COFFEE_SMALL_PRICE = 1.59
+    static let COFFEE_MEDIUM_PRICE = 1.79
+    static let COFFEE_LARGE_PRICE = 1.99
+    
+    static let HOTCHOCOLATE_SMALL_PRICE = 1.99
+    static let HOTCHOCOLATE_MEDIUM_PRICE = 2.49
+    static let HOTCHOCOLATE_LARGE_PRICE = 2.99
+    
 }

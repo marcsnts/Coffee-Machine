@@ -88,7 +88,6 @@
 				49700AD91E0AFC380008D903 /* Assets.xcassets */,
 				49700ADB1E0AFC380008D903 /* LaunchScreen.storyboard */,
 				49700ADE1E0AFC380008D903 /* Info.plist */,
-				49700AFC1E0B12050008D903 /* Constants.swift */,
 			);
 			path = "Coffee Machine";
 			sourceTree = "<group>";
@@ -105,6 +104,7 @@
 		49700AF21E0B0AA30008D903 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				49700AEC1E0B08B80008D903 /* LandingPageViewController.swift */,
 				49700AD41E0AFC380008D903 /* ViewController.swift */,
 				49700AF61E0B0B0C0008D903 /* DrinksViewController.swift */,
 				49700AF81E0B0E370008D903 /* ModifiersViewController.swift */,
@@ -115,9 +115,8 @@
 		49700AF31E0B0AAC0008D903 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				49700B091E10CD9A0008D903 /* Helper Classes */,
 				49700AE81E0B01470008D903 /* Beverages.swift */,
-				49700AEC1E0B08B80008D903 /* LandingPageViewController.swift */,
-				49700AFE1E0B13D40008D903 /* UIHelper.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -129,6 +128,15 @@
 				49700B071E0B1E880008D903 /* BeverageCell.swift */,
 			);
 			name = "Custom Rows";
+			sourceTree = "<group>";
+		};
+		49700B091E10CD9A0008D903 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				49700AFE1E0B13D40008D903 /* UIHelper.swift */,
+				49700AFC1E0B12050008D903 /* Constants.swift */,
+			);
+			name = "Helper Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

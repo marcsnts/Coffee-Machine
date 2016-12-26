@@ -19,9 +19,11 @@ public class BeverageCell : Cell<HotDrink>, CellType{
     
     let beverageImageView = UIImageView(image: nil)
     let beverageLabel = UILabel()
+    let beveragePriceLabel = UILabel()
     
     public override func setup() {
         height = {120}
+        setupCell()
         super.setup()
     }
     
@@ -29,34 +31,57 @@ public class BeverageCell : Cell<HotDrink>, CellType{
         
     }
     
-    private func setupImage() {
+    private func setupCell() {
         
         guard let beverage = row.value else {
             return
         }
         
+        let beverageImageSize = CGSize(width: 120, height: 80)
+        let beverageImageLeftPadding = 15
+        let beverageLabelLeftPadding = 10
+        let beveragePriceLabelTopPadding = 5
+        
+        beverageImageView.contentMode = UIViewContentMode.scaleAspectFit
+        beverageLabel.textAlignment = NSTextAlignment.center
+        beveragePriceLabel.textAlignment = NSTextAlignment.center
+        beveragePriceLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)
+        beveragePriceLabel.textColor = UIColor.darkGray
+        
         switch beverage {
         case .Cappuccino:
             beverageImageView.image = UIImage(named: "cappuccino")
             beverageLabel.text = "Cappuccino"
+            beveragePriceLabel.text = "$\(Constants.CAPPUCCINO_SMALL_PRICE)"
         case .Coffee:
             beverageImageView.image = UIImage(named: "coffee")
             beverageLabel.text = "Coffee"
+            beveragePriceLabel.text = "$\(Constants.COFFEE_SMALL_PRICE)"
         case .HotChocolate:
             beverageImageView.image = UIImage(named: "hot-drink")
             beverageLabel.text = "Hot Chocolate"
+            beveragePriceLabel.text = "$\(Constants.HOTCHOCOLATE_SMALL_PRICE)"
         }
-        
-        
         
         self.addSubview(beverageImageView)
+        self.addSubview(beverageLabel)
+        self.addSubview(beveragePriceLabel)
         
         beverageImageView.snp.makeConstraints { (make) -> Void in
-            make.size.equalTo(CGSize(width: 120, height: 80))
+            make.size.equalTo(beverageImageSize)
             make.centerY.equalTo(self.center)
-            make.left.equalTo(self).offset(10)
+            make.left.equalTo(self).offset(beverageImageLeftPadding)
         }
         
+        beverageLabel.snp.makeConstraints { (make) -> Void in
+            make.centerY.equalTo(self.center)
+            make.left.equalTo(beverageImageView.snp.right).offset(beverageLabelLeftPadding)
+        }
+        
+        beveragePriceLabel.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(beverageLabel.snp.bottom).offset(beveragePriceLabelTopPadding)
+            make.left.equalTo(beverageLabel)
+        }
         
     }
     

@@ -8,70 +8,39 @@
 
 import UIKit
 import SnapKit
+import Eureka
 
-class DrinksViewController: UIViewController {
-
+class DrinksViewController: FormViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        
+        self.title = "Marc's Coffee Machine"
+        setupForm()
+        
     }
-
-
-    private func setupView() {
+    
+    private func setupForm() {
+        let table = UITableView(frame: view.frame, style: UITableViewStyle.grouped)
+        tableView = table
         
-        let coffeeImageView = UIImageView(image: UIImage(named: "coffee"))
-        coffeeImageView.contentMode = UIViewContentMode.scaleAspectFit
-
-//        let coffeeLabel = UIHelper.createLabel(text: "Coffee", font: Constants.DRINK_LABEL_FONT, color: Constants.DRINK_LABEL_FONT_COLOR)
-        
-        let cappuccinoImageView = UIImageView(image: UIImage(named: "cappuccino"))
-        cappuccinoImageView.contentMode = UIViewContentMode.scaleAspectFit
-
-//        let cappuccinoLabel = UIHelper.createLabel(text: "Cappuccino", font: Constants.DRINK_LABEL_FONT, color: Constants.DRINK_LABEL_FONT_COLOR)
-        
-        let hotchocolateImageView = UIImageView(image: UIImage(named: "hot-drink"))
-        hotchocolateImageView.contentMode = UIViewContentMode.scaleAspectFit
-
-//        let hotchocolateLabel = UIHelper.createLabel(text: "Hot Chocolate", font: Constants.DRINK_LABEL_FONT, color: Constants.DRINK_LABEL_FONT_COLOR)
-        
-        view.addSubview(coffeeImageView)
-        view.addSubview(cappuccinoImageView)
-        view.addSubview(hotchocolateImageView)
-        
-        coffeeImageView.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalTo(view.center)
-            make.top.equalTo(view).offset(40)
-            make.size.equalTo(Constants.DRINK_IMAGE_SIZE)
+        view.addSubview(table)
+        table.snp.makeConstraints { (make) -> Void in
+            make.edges.equalTo(view).inset(UIEdgeInsetsMake(40, 0, 0, 0))
+            make.size.equalTo(view)
         }
-        
-//        coffeeLabel.snp.makeConstraints { (make) -> Void in
-//            make.centerX.equalTo(coffeeImageView.center)
-//            make.top.equalTo(coffeeImageView.snp.bottom).offset(Constants.DRINK_LABEL_PADDING)
-//        }
-//        
-        cappuccinoImageView.snp.makeConstraints { (make) -> Void in
-            make.size.equalTo(Constants.DRINK_IMAGE_SIZE)
-            make.centerX.equalTo(view.center)
-            make.top.equalTo(coffeeImageView.snp.bottom).offset(Constants.DRINK_IMAGE_PADDING)
-        }
-        
-//        cappuccinoLabel.snp.makeConstraints { (make) -> Void in
-//            make.centerX.equalTo(cappuccinoImageView.center)
-//            make.top.equalTo(cappuccinoImageView.snp.bottom).offset(Constants.DRINK_LABEL_PADDING)
-//        }
-        
-        hotchocolateImageView.snp.makeConstraints { (make) -> Void in
-            make.size.equalTo(Constants.DRINK_IMAGE_SIZE)
-            make.centerX.equalTo(view.center)
-            make.top.equalTo(cappuccinoImageView.snp.bottom).offset(Constants.DRINK_IMAGE_PADDING)
-        }
-        
-//        hotchocolateLabel.snp.makeConstraints { (make) -> Void in
-//            make.centerX.equalTo(hotchocolateImageView.center)
-//            make.top.equalTo(hotchocolateImageView.snp.bottom).offset(Constants.DRINK_LABEL_PADDING)
-//        }
-        
-        
+        super.viewDidLoad()
+        form = Section("Hot Drinks")
+            <<< BeverageRow() { row in
+                row.value = HotDrink.Coffee
+            }
+            <<< BeverageRow() { row in
+                row.value = HotDrink.Cappuccino
+            }
+            <<< BeverageRow() { row in
+                row.value = HotDrink.HotChocolate
+            }
+            +++ Section()
     }
 
 }
