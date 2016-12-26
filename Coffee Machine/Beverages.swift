@@ -8,11 +8,13 @@
 
 import Foundation
 
-enum BeverageSize {
-    case Small, Medium, Large
+enum BeverageSize: String {
+    case Small = "Small",
+    Medium = "Medium",
+    Large = "Large"
 }
 
-public enum HotDrink:String {
+public enum HotDrink: String {
     case Coffee = "Coffee",
     HotChocolate = "Hot Chocolate",
     Cappuccino = "Cappuccino"

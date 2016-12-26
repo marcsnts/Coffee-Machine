@@ -20,23 +20,75 @@ class ModifiersViewController: FormViewController {
             self.title = drink.rawValue
         }
         setupForm()
-        setupSubmitButton()
+        setupAddToBagButton()
     }
     
-    private func setupSubmitButton() {
-        let orderButton = UIButton()
+    private func setupAddToBagButton() {
+        let addToBagButton = UIButton()
         
-        orderButton.backgroundColor = Colors.ORANGE
-        orderButton.setTitle("ORDER", for: UIControlState.normal)
+        addToBagButton.backgroundColor = Colors.ORANGE
+        addToBagButton.setTitle("ADD TO BAG", for: UIControlState.normal)
+        addToBagButton.addTarget(self, action: #selector(ModifiersViewController.addToBagTapped(sender:)), for: UIControlEvents.touchUpInside)
+        view.addSubview(addToBagButton)
         
-        view.addSubview(orderButton)
-        
-        orderButton.snp.makeConstraints { (make) -> Void in
+        addToBagButton.snp.makeConstraints { (make) -> Void in
             make.bottom.equalToSuperview()
             make.height.equalTo(60)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview()
         }
+    
+    }
+    
+    func addToBagTapped(sender: UIButton!) {
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            sender.alpha = 0.5
+            sender.titleLabel?.alpha = 0.5
+        })
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            sender.alpha = 1
+            sender.titleLabel?.alpha = 1
+        })
+        
+        addOrderToBag()
+        
+    }
+    
+    private func addOrderToBag() {
+        
+        guard let selectedDrink = Temporary.sharedInstance.selectedDrink else {
+            return
+        }
+        
+        var size: BeverageSize
+        if valuesDictionary["Small"] as? Bool == true {
+            size = .Small
+        }
+        else if valuesDictionary["Mediume"] as? Bool == true {
+            size = .Medium
+        }
+        else {
+            size = .Large
+        }
+        
+        
+        switch selectedDrink {
+        case .Cappuccino:
+            Temporary.sharedInstance.order.append(Cappuccino(size: size))
+        case .Coffee:
+            if let sugar = valuesDictionary["Sugar"] as? Double {
+                Temporary.sharedInstance.order.append(Coffee(size: size, sugar: Int(sugar)))
+            }
+        case .HotChocolate:
+            if let whippedCream = valuesDictionary["WhippedCream"] as? Bool {
+                Temporary.sharedInstance.order.append(HotChocolate(size: size, whippedCream: whippedCream))
+            }
+        }
+        
+        _ = navigationController?.popViewController(animated: true)
+        
     }
     
     private func setupForm() {
