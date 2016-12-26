@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49686BA51E10FA09005EC314 /* SelectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49686BA41E10FA09005EC314 /* SelectRow.swift */; };
+		49686BA71E10FA7A005EC314 /* SelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49686BA61E10FA7A005EC314 /* SelectCell.xib */; };
 		49700AD31E0AFC380008D903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AD21E0AFC380008D903 /* AppDelegate.swift */; };
 		49700AD51E0AFC380008D903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AD41E0AFC380008D903 /* ViewController.swift */; };
 		49700AD81E0AFC380008D903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49700AD61E0AFC380008D903 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49686BA41E10FA09005EC314 /* SelectRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRow.swift; sourceTree = "<group>"; };
+		49686BA61E10FA7A005EC314 /* SelectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectCell.xib; sourceTree = "<group>"; };
 		49700ACF1E0AFC380008D903 /* Coffee Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49700AD21E0AFC380008D903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49700AD41E0AFC380008D903 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 			children = (
 				49700B021E0B1E1E0008D903 /* BeverageCell.xib */,
 				49700B071E0B1E880008D903 /* BeverageCell.swift */,
+				49686BA41E10FA09005EC314 /* SelectRow.swift */,
+				49686BA61E10FA7A005EC314 /* SelectCell.xib */,
 			);
 			name = "Custom Rows";
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49700ADD1E0AFC380008D903 /* LaunchScreen.storyboard in Resources */,
+				49686BA71E10FA7A005EC314 /* SelectCell.xib in Resources */,
 				49700ADA1E0AFC380008D903 /* Assets.xcassets in Resources */,
 				49700AE71E0B00790008D903 /* Cartfile in Resources */,
 				49700B031E0B1E1E0008D903 /* BeverageCell.xib in Resources */,
@@ -248,6 +255,7 @@
 				49700B081E0B1E880008D903 /* BeverageCell.swift in Sources */,
 				49700AE91E0B01470008D903 /* Beverages.swift in Sources */,
 				49700AD51E0AFC380008D903 /* ViewController.swift in Sources */,
+				49686BA51E10FA09005EC314 /* SelectRow.swift in Sources */,
 				49700B0C1E10DA590008D903 /* Temporary.swift in Sources */,
 				49700AF71E0B0B0C0008D903 /* DrinksViewController.swift in Sources */,
 				49700AF91E0B0E370008D903 /* ModifiersViewController.swift in Sources */,
@@ -424,6 +432,7 @@
 				49700AE31E0AFC380008D903 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
