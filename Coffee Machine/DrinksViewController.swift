@@ -11,36 +11,42 @@ import SnapKit
 import Eureka
 
 class DrinksViewController: FormViewController {
+        
+    let modifiersSegue = "Modifiers"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView?.snp.makeConstraints { (make) -> Void in
+            make.edges.equalTo(self.view)
+        }
         self.title = "Marc's Coffee Machine"
         setupForm()
-        
     }
     
     private func setupForm() {
-        let table = UITableView(frame: view.frame, style: UITableViewStyle.grouped)
-        tableView = table
-        
-        view.addSubview(table)
-        table.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(view).inset(UIEdgeInsetsMake(40, 0, 0, 0))
-            make.size.equalTo(view)
-        }
         
         form = Section("Hot Drinks")
             <<< BeverageRow() { row in
                 row.value = HotDrink.Coffee
+                }.onCellSelection { cell, row in
+                    Temporary.sharedInstance.selectedDrink = row.value
+                    self.performSegue(withIdentifier: self.modifiersSegue, sender: self)
             }
             <<< BeverageRow() { row in
                 row.value = HotDrink.Cappuccino
+                }.onCellSelection { cell, row in
+                    Temporary.sharedInstance.selectedDrink = row.value
+                    self.performSegue(withIdentifier: self.modifiersSegue, sender: self)
             }
             <<< BeverageRow() { row in
                 row.value = HotDrink.HotChocolate
+                }.onCellSelection { cell, row in
+                    Temporary.sharedInstance.selectedDrink = row.value
+                    self.performSegue(withIdentifier: self.modifiersSegue, sender: self)
             }
             +++ Section()
+        
     }
 
 }

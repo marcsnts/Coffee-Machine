@@ -37,11 +37,19 @@
                     <view key="view" contentMode="scaleToFill" id="odF-TM-quw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="VcD-MH-ENP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="hsb-BO-beX"/>
                     <connections>
-                        <segue destination="3d8-KJ-CvZ" kind="show" id="ZYQ-Jk-KO8"/>
+                        <outlet property="tableView" destination="VcD-MH-ENP" id="Gdt-ic-7aJ"/>
+                        <segue destination="3d8-KJ-CvZ" kind="show" identifier="Modifiers" id="ZYQ-Jk-KO8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnm-vR-6G5" userLabel="First Responder" sceneMemberID="firstResponder"/>
