@@ -19,7 +19,7 @@ class UIHelper {
     }
     
     class func successfulAnimation(view: UIView, text: String) {
-        
+                
         let hud = MBProgressHUD(view: view)
         view.addSubview(hud)
         hud.customView = UIImageView(image: UIImage(named: "Checkmark"))

@@ -13,14 +13,13 @@
 		49686BAB1E113AA4005EC314 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49686BAA1E113AA4005EC314 /* UIHelper.swift */; };
 		49686BAD1E11581D005EC314 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49686BAC1E11581D005EC314 /* Alamofire.framework */; };
 		49686BAF1E115820005EC314 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49686BAE1E115820005EC314 /* MBProgressHUD.framework */; };
+		49686BB11E1162E1005EC314 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49686BB01E1162E1005EC314 /* CartViewController.swift */; };
 		49700AD31E0AFC380008D903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AD21E0AFC380008D903 /* AppDelegate.swift */; };
-		49700AD51E0AFC380008D903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AD41E0AFC380008D903 /* ViewController.swift */; };
 		49700AD81E0AFC380008D903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49700AD61E0AFC380008D903 /* Main.storyboard */; };
 		49700ADA1E0AFC380008D903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49700AD91E0AFC380008D903 /* Assets.xcassets */; };
 		49700ADD1E0AFC380008D903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49700ADB1E0AFC380008D903 /* LaunchScreen.storyboard */; };
 		49700AE71E0B00790008D903 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 49700AE61E0B00790008D903 /* Cartfile */; };
 		49700AE91E0B01470008D903 /* Beverages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AE81E0B01470008D903 /* Beverages.swift */; };
-		49700AED1E0B08B80008D903 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AEC1E0B08B80008D903 /* LandingPageViewController.swift */; };
 		49700AF01E0B09110008D903 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49700AEF1E0B09110008D903 /* SnapKit.framework */; };
 		49700AF71E0B0B0C0008D903 /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AF61E0B0B0C0008D903 /* DrinksViewController.swift */; };
 		49700AF91E0B0E370008D903 /* ModifiersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AF81E0B0E370008D903 /* ModifiersViewController.swift */; };
@@ -38,16 +37,15 @@
 		49686BAA1E113AA4005EC314 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		49686BAC1E11581D005EC314 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		49686BAE1E115820005EC314 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
+		49686BB01E1162E1005EC314 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		49700ACF1E0AFC380008D903 /* Coffee Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49700AD21E0AFC380008D903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49700AD41E0AFC380008D903 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49700AD71E0AFC380008D903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49700AD91E0AFC380008D903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49700ADC1E0AFC380008D903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49700ADE1E0AFC380008D903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49700AE61E0B00790008D903 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		49700AE81E0B01470008D903 /* Beverages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beverages.swift; sourceTree = "<group>"; };
-		49700AEC1E0B08B80008D903 /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		49700AEF1E0B09110008D903 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		49700AF61E0B0B0C0008D903 /* DrinksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
 		49700AF81E0B0E370008D903 /* ModifiersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifiersViewController.swift; sourceTree = "<group>"; };
@@ -119,10 +117,9 @@
 		49700AF21E0B0AA30008D903 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				49700AEC1E0B08B80008D903 /* LandingPageViewController.swift */,
-				49700AD41E0AFC380008D903 /* ViewController.swift */,
 				49700AF61E0B0B0C0008D903 /* DrinksViewController.swift */,
 				49700AF81E0B0E370008D903 /* ModifiersViewController.swift */,
+				49686BB01E1162E1005EC314 /* CartViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -268,14 +265,13 @@
 				49700B081E0B1E880008D903 /* BeverageCell.swift in Sources */,
 				49686BA91E113055005EC314 /* Colors.swift in Sources */,
 				49700AE91E0B01470008D903 /* Beverages.swift in Sources */,
-				49700AD51E0AFC380008D903 /* ViewController.swift in Sources */,
 				49686BA51E10FA09005EC314 /* SelectRow.swift in Sources */,
 				49700B0C1E10DA590008D903 /* Temporary.swift in Sources */,
 				49700AF71E0B0B0C0008D903 /* DrinksViewController.swift in Sources */,
 				49700AF91E0B0E370008D903 /* ModifiersViewController.swift in Sources */,
+				49686BB11E1162E1005EC314 /* CartViewController.swift in Sources */,
 				49700AFD1E0B12050008D903 /* Constants.swift in Sources */,
 				49700AD31E0AFC380008D903 /* AppDelegate.swift in Sources */,
-				49700AED1E0B08B80008D903 /* LandingPageViewController.swift in Sources */,
 				49686BAB1E113AA4005EC314 /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
