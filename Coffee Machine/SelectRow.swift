@@ -14,6 +14,7 @@ import SnapKit
 public class SelectCell : Cell<Bool>, CellType {
   
     let title = UILabel()
+    
     private var isSettingUp = true
     
     public override func setup() {
@@ -26,7 +27,8 @@ public class SelectCell : Cell<Bool>, CellType {
     
     public override func update() {
         
-        let selectedColor = UIColor.cyan
+        let nonSelectedColor = UIColor.white
+        let selectedColor = UIColor.blue
         
         if !isSettingUp {
             row.value = row.value == true ? false : true
@@ -35,20 +37,20 @@ public class SelectCell : Cell<Bool>, CellType {
             isSettingUp = false
         }
 
-        backgroundColor = row.value == true ? selectedColor : UIColor.clear
+        backgroundColor = row.value == true ? selectedColor : nonSelectedColor
         
     }
     
     private func setupCell() {
-
-        title.text = row.title
         
+        title.text = row.title
+        title.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
         self.addSubview(title)
         
         title.snp.makeConstraints { (make) -> Void in
             make.center.equalToSuperview()
         }
-        
+
     }
 
 }
