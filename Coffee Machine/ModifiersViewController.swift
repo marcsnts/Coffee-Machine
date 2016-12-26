@@ -17,18 +17,43 @@ class ModifiersViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupForm()
+        setupSubmitButton()
+    }
+    
+    private func setupSubmitButton() {
+        let orderButton = UIButton()
+        
+        orderButton.backgroundColor = Colors.ORANGE
+        orderButton.setTitle("ORDER", for: UIControlState.normal)
+        
+        view.addSubview(orderButton)
+        
+        orderButton.snp.makeConstraints { (make) -> Void in
+            make.bottom.equalToSuperview().offset(-10)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview()
+        }
     }
     
     private func setupForm() {
         
-        guard let selectedDrink = Temporary.sharedInstance.selectedDrink else {
+        guard let selectedDrink = Temporary.sharedInstance.selectedDrink, let tableView = tableView else {
             return
         }
         
-        tableView?.snp.makeConstraints { (make) -> Void in
+        UIHelper.setTableViewColor(tableView: tableView)
+        
+        tableView.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(self.view)
         }
 
+        SelectRow.defaultCellSetup = { cell, row in
+            cell.backgroundColor = Colors.CREAM
+        }
+        
+        StepperRow.defaultCellSetup = { cell, row in
+            cell.backgroundColor = Colors.CREAM
+        }
         
         form = Section("Sizes")
             <<< SelectRow("Small") {

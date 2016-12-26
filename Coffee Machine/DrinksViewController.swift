@@ -31,8 +31,18 @@ class DrinksViewController: FormViewController {
     
     private func setupForm() {
         
-        tableView?.snp.makeConstraints { (make) -> Void in
+        guard let tableView = tableView else {
+            return
+        }
+        
+        UIHelper.setTableViewColor(tableView: tableView)
+        
+        tableView.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(self.view)
+        }
+        
+        BeverageRow.defaultCellSetup = { cell, row in
+            cell.backgroundColor = Colors.CREAM
         }
         
         form = Section("Hot Drinks")
@@ -42,14 +52,16 @@ class DrinksViewController: FormViewController {
                     Temporary.sharedInstance.selectedDrink = row.value
                     self.performSegue(withIdentifier: self.modifiersSegue, sender: self)
             }
+
             <<< BeverageRow() { row in
-                row.value = HotDrink.Cappuccino
+                row.value = HotDrink.HotChocolate
                 }.onCellSelection { cell, row in
                     Temporary.sharedInstance.selectedDrink = row.value
                     self.performSegue(withIdentifier: self.modifiersSegue, sender: self)
             }
+            
             <<< BeverageRow() { row in
-                row.value = HotDrink.HotChocolate
+                row.value = HotDrink.Cappuccino
                 }.onCellSelection { cell, row in
                     Temporary.sharedInstance.selectedDrink = row.value
                     self.performSegue(withIdentifier: self.modifiersSegue, sender: self)

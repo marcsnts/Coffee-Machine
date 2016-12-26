@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		49686BA51E10FA09005EC314 /* SelectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49686BA41E10FA09005EC314 /* SelectRow.swift */; };
 		49686BA71E10FA7A005EC314 /* SelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49686BA61E10FA7A005EC314 /* SelectCell.xib */; };
+		49686BA91E113055005EC314 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49686BA81E113055005EC314 /* Colors.swift */; };
+		49686BAB1E113AA4005EC314 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49686BAA1E113AA4005EC314 /* UIHelper.swift */; };
 		49700AD31E0AFC380008D903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AD21E0AFC380008D903 /* AppDelegate.swift */; };
 		49700AD51E0AFC380008D903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AD41E0AFC380008D903 /* ViewController.swift */; };
 		49700AD81E0AFC380008D903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49700AD61E0AFC380008D903 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		49686BA41E10FA09005EC314 /* SelectRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRow.swift; sourceTree = "<group>"; };
 		49686BA61E10FA7A005EC314 /* SelectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectCell.xib; sourceTree = "<group>"; };
+		49686BA81E113055005EC314 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		49686BAA1E113AA4005EC314 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		49700ACF1E0AFC380008D903 /* Coffee Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49700AD21E0AFC380008D903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49700AD41E0AFC380008D903 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 			children = (
 				49700AFC1E0B12050008D903 /* Constants.swift */,
 				49700B0B1E10DA590008D903 /* Temporary.swift */,
+				49686BA81E113055005EC314 /* Colors.swift */,
+				49686BAA1E113AA4005EC314 /* UIHelper.swift */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49700B081E0B1E880008D903 /* BeverageCell.swift in Sources */,
+				49686BA91E113055005EC314 /* Colors.swift in Sources */,
 				49700AE91E0B01470008D903 /* Beverages.swift in Sources */,
 				49700AD51E0AFC380008D903 /* ViewController.swift in Sources */,
 				49686BA51E10FA09005EC314 /* SelectRow.swift in Sources */,
@@ -259,6 +266,7 @@
 				49700AFD1E0B12050008D903 /* Constants.swift in Sources */,
 				49700AD31E0AFC380008D903 /* AppDelegate.swift in Sources */,
 				49700AED1E0B08B80008D903 /* LandingPageViewController.swift in Sources */,
+				49686BAB1E113AA4005EC314 /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

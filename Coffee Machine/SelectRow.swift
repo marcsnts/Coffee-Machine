@@ -25,8 +25,8 @@ public class SelectCell : Cell<Bool>, CellType {
     
     public override func update() {
         
-        let nonSelectedColor = UIColor.white
-        let selectedColor = UIColor.blue
+        let nonSelectedColor = Colors.CREAM
+        let selectedColor = Colors.ORANGE
         
 //        if !isSettingUp {
 //            row.value = row.value == true ? false : true
