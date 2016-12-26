@@ -16,6 +16,9 @@ class ModifiersViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let drink = Temporary.sharedInstance.selectedDrink {
+            self.title = drink.rawValue
+        }
         setupForm()
         setupSubmitButton()
     }
@@ -29,7 +32,8 @@ class ModifiersViewController: FormViewController {
         view.addSubview(orderButton)
         
         orderButton.snp.makeConstraints { (make) -> Void in
-            make.bottom.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview()
+            make.height.equalTo(60)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview()
         }
@@ -92,10 +96,15 @@ class ModifiersViewController: FormViewController {
                 $0.hidden = Condition.function(["Medium"], { form in
                     return selectedDrink == .Coffee ? false : true
                 })
-                }.cellSetup { cell, row in
+            }.cellSetup { cell, row in
+                cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
+                cell.stepper.tintColor = Colors.ORANGE
+                cell.valueLabel.textColor = Colors.ORANGE
                 cell.stepper.maximumValue = 5
                 cell.stepper.minimumValue = 0
                 cell.stepper.stepValue = 1
+            }.onChange { row in
+                self.valuesDictionary = self.form.values()
             }
             <<< SelectRow("WhippedCream") {
                 $0.title = "Whipped cream"

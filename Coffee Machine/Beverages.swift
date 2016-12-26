@@ -12,6 +12,12 @@ enum BeverageSize {
     case Small, Medium, Large
 }
 
+public enum HotDrink:String {
+    case Coffee = "Coffee",
+    HotChocolate = "Hot Chocolate",
+    Cappuccino = "Cappuccino"
+}
+
 class Beverage: NSObject {
     
     var size: BeverageSize
