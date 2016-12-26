@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum HotDrink {
-    case Coffee, HotChocolate, Cappuccino
-}
-
 enum BeverageSize {
     case Small, Medium, Large
 }

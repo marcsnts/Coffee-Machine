@@ -19,6 +19,10 @@
 		49700AF71E0B0B0C0008D903 /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AF61E0B0B0C0008D903 /* DrinksViewController.swift */; };
 		49700AF91E0B0E370008D903 /* ModifiersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AF81E0B0E370008D903 /* ModifiersViewController.swift */; };
 		49700AFB1E0B10A40008D903 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49700AFA1E0B10A40008D903 /* Eureka.framework */; };
+		49700AFD1E0B12050008D903 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AFC1E0B12050008D903 /* Constants.swift */; };
+		49700AFF1E0B13D40008D903 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700AFE1E0B13D40008D903 /* UIHelper.swift */; };
+		49700B031E0B1E1E0008D903 /* BeverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49700B021E0B1E1E0008D903 /* BeverageCell.xib */; };
+		49700B081E0B1E880008D903 /* BeverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700B071E0B1E880008D903 /* BeverageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		49700AF61E0B0B0C0008D903 /* DrinksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
 		49700AF81E0B0E370008D903 /* ModifiersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifiersViewController.swift; sourceTree = "<group>"; };
 		49700AFA1E0B10A40008D903 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
+		49700AFC1E0B12050008D903 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		49700AFE1E0B13D40008D903 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		49700B021E0B1E1E0008D903 /* BeverageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BeverageCell.xib; path = ../BeverageCell.xib; sourceTree = "<group>"; };
+		49700B071E0B1E880008D903 /* BeverageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeverageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,7 @@
 		49700AD11E0AFC380008D903 /* Coffee Machine */ = {
 			isa = PBXGroup;
 			children = (
+				49700B041E0B1E5F0008D903 /* Custom Rows */,
 				49700AD21E0AFC380008D903 /* AppDelegate.swift */,
 				49700AF31E0B0AAC0008D903 /* Classes */,
 				49700AF21E0B0AA30008D903 /* View Controllers */,
@@ -79,6 +88,7 @@
 				49700AD91E0AFC380008D903 /* Assets.xcassets */,
 				49700ADB1E0AFC380008D903 /* LaunchScreen.storyboard */,
 				49700ADE1E0AFC380008D903 /* Info.plist */,
+				49700AFC1E0B12050008D903 /* Constants.swift */,
 			);
 			path = "Coffee Machine";
 			sourceTree = "<group>";
@@ -107,8 +117,18 @@
 			children = (
 				49700AE81E0B01470008D903 /* Beverages.swift */,
 				49700AEC1E0B08B80008D903 /* LandingPageViewController.swift */,
+				49700AFE1E0B13D40008D903 /* UIHelper.swift */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		49700B041E0B1E5F0008D903 /* Custom Rows */ = {
+			isa = PBXGroup;
+			children = (
+				49700B021E0B1E1E0008D903 /* BeverageCell.xib */,
+				49700B071E0B1E880008D903 /* BeverageCell.swift */,
+			);
+			name = "Custom Rows";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +195,7 @@
 				49700ADD1E0AFC380008D903 /* LaunchScreen.storyboard in Resources */,
 				49700ADA1E0AFC380008D903 /* Assets.xcassets in Resources */,
 				49700AE71E0B00790008D903 /* Cartfile in Resources */,
+				49700B031E0B1E1E0008D903 /* BeverageCell.xib in Resources */,
 				49700AD81E0AFC380008D903 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,12 +226,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49700B081E0B1E880008D903 /* BeverageCell.swift in Sources */,
 				49700AE91E0B01470008D903 /* Beverages.swift in Sources */,
 				49700AD51E0AFC380008D903 /* ViewController.swift in Sources */,
 				49700AF71E0B0B0C0008D903 /* DrinksViewController.swift in Sources */,
 				49700AF91E0B0E370008D903 /* ModifiersViewController.swift in Sources */,
+				49700AFD1E0B12050008D903 /* Constants.swift in Sources */,
 				49700AD31E0AFC380008D903 /* AppDelegate.swift in Sources */,
 				49700AED1E0B08B80008D903 /* LandingPageViewController.swift in Sources */,
+				49700AFF1E0B13D40008D903 /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

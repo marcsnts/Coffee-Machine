@@ -26,10 +26,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Drinks View Controller-->
         <scene sceneID="ER4-xe-zjz">
             <objects>
-                <viewController id="XXk-zc-Tcz" sceneMemberID="viewController">
+                <viewController id="XXk-zc-Tcz" customClass="DrinksViewController" customModule="Coffee_Machine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wNV-qr-86i"/>
                         <viewControllerLayoutGuide type="bottom" id="hRW-or-KvQ"/>
