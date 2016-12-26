@@ -29,7 +29,7 @@ class DrinksViewController: FormViewController {
             make.edges.equalTo(view).inset(UIEdgeInsetsMake(40, 0, 0, 0))
             make.size.equalTo(view)
         }
-        super.viewDidLoad()
+        
         form = Section("Hot Drinks")
             <<< BeverageRow() { row in
                 row.value = HotDrink.Coffee

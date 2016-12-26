@@ -80,14 +80,13 @@
 		49700AD11E0AFC380008D903 /* Coffee Machine */ = {
 			isa = PBXGroup;
 			children = (
-				49700B041E0B1E5F0008D903 /* Custom Rows */,
+				49700ADE1E0AFC380008D903 /* Info.plist */,
 				49700AD21E0AFC380008D903 /* AppDelegate.swift */,
+				49700B0A1E10D5240008D903 /* Storyboards */,
+				49700B041E0B1E5F0008D903 /* Custom Rows */,
 				49700AF31E0B0AAC0008D903 /* Classes */,
 				49700AF21E0B0AA30008D903 /* View Controllers */,
-				49700AD61E0AFC380008D903 /* Main.storyboard */,
 				49700AD91E0AFC380008D903 /* Assets.xcassets */,
-				49700ADB1E0AFC380008D903 /* LaunchScreen.storyboard */,
-				49700ADE1E0AFC380008D903 /* Info.plist */,
 			);
 			path = "Coffee Machine";
 			sourceTree = "<group>";
@@ -137,6 +136,15 @@
 				49700AFC1E0B12050008D903 /* Constants.swift */,
 			);
 			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		49700B0A1E10D5240008D903 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				49700AD61E0AFC380008D903 /* Main.storyboard */,
+				49700ADB1E0AFC380008D903 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

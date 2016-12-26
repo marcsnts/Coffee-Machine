@@ -40,15 +40,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="hsb-BO-beX"/>
+                    <connections>
+                        <segue destination="3d8-KJ-CvZ" kind="show" id="ZYQ-Jk-KO8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnm-vR-6G5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1772" y="35.532233883058474"/>
         </scene>
-        <!--View Controller-->
+        <!--Modifiers View Controller-->
         <scene sceneID="ReJ-oj-QUA">
             <objects>
-                <viewController id="3d8-KJ-CvZ" sceneMemberID="viewController">
+                <viewController id="3d8-KJ-CvZ" customClass="ModifiersViewController" customModule="Coffee_Machine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vju-Xe-CD3"/>
                         <viewControllerLayoutGuide type="bottom" id="hWN-VZ-QOa"/>
@@ -63,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="2660" y="35.532233883058474"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Drinks Navigation Controller-->
         <scene sceneID="Xm4-Dc-7tM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rAF-gy-rUT" sceneMemberID="viewController">
+                <navigationController title="Drinks Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="rAF-gy-rUT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XTy-2e-bTK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
