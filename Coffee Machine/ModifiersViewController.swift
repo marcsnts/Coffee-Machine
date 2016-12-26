@@ -11,7 +11,9 @@ import SnapKit
 import Eureka
 
 class ModifiersViewController: FormViewController {
-
+    
+    var valuesDictionary = [String:Any?]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupForm()
@@ -26,31 +28,71 @@ class ModifiersViewController: FormViewController {
         tableView?.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(self.view)
         }
+
         
-        form = Section("Size")
-            <<< SelectRow() {
+        form = Section("Sizes")
+            <<< SelectRow("Small") {
                 $0.title = "Small"
                 $0.value = true
             }.onCellSelection { cell, row in
-                cell.update()
+                self.updateSizeRow(cell: cell, row: row)
             }
-            <<< SelectRow() {
+            
+            <<< SelectRow("Medium") {
                 let priceDifference = getSizePriceDifference(type: selectedDrink, size1: .Small, size2: .Medium)
                 $0.title = "Medium +$\(String(format: "%.2f", priceDifference))"
                 $0.value = false
-                }.onCellSelection { cell, row in
-                    cell.update()
+            }.onCellSelection { cell, row in
+                self.updateSizeRow(cell: cell, row: row)
             }
-            <<< SelectRow() {
+            
+            <<< SelectRow("Large") {
                 let priceDifference = getSizePriceDifference(type: selectedDrink, size1: .Small, size2: .Large)
                 $0.title = "Large +$\(String(format: "%.2f", priceDifference))"
                 $0.value = false
-                }.onCellSelection { cell, row in
-                    cell.update()
+            }.onCellSelection { cell, row in
+                self.updateSizeRow(cell: cell, row: row)
             }
             
-        +++ Section()
+            +++ Section("Add-ons") {
+                $0.hidden = Condition.function(["Medium"], { form in
+                    return selectedDrink == .Cappuccino ? true : false
+                })
+            }
+            <<< StepperRow("Sugar") {
+                $0.title = "Sugar"
+                $0.value = 0
+                }.cellSetup { cell, row in
+                    cell.stepper.maximumValue = 5
+                    cell.stepper.minimumValue = 0
+                    cell.stepper.stepValue = 1
+            }
+         
+        
+        self.valuesDictionary = form.values()
+    }
+    
+    private func updateSizeRow(cell: SelectCell, row: SelectRow) {
+        self.deselectSizes()
+        row.value = row.value == true ? false : true
+        cell.update()
+        self.valuesDictionary = self.form.values()
+    }
+    
+    //Function used to turn all sizes to false in order to give the experience of being able to only have one size selected
+    private func deselectSizes() {
 
+        guard let smallRow: SelectRow = form.rowBy(tag: "Small"), let mediumRow: SelectRow = form.rowBy(tag: "Medium"), let largeRow: SelectRow = form.rowBy(tag: "Large") else {
+            return
+        }
+        
+        smallRow.value = false
+        mediumRow.value = false
+        largeRow.value = false
+        smallRow.updateCell()
+        mediumRow.updateCell()
+        largeRow.updateCell()
+        
     }
     
     private func getSizePriceDifference(type: HotDrink, size1: BeverageSize, size2: BeverageSize) -> Double {

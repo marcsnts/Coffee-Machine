@@ -15,8 +15,6 @@ public class SelectCell : Cell<Bool>, CellType {
   
     let title = UILabel()
     
-    private var isSettingUp = true
-    
     public override func setup() {
     
         super.setup()
@@ -30,12 +28,12 @@ public class SelectCell : Cell<Bool>, CellType {
         let nonSelectedColor = UIColor.white
         let selectedColor = UIColor.blue
         
-        if !isSettingUp {
-            row.value = row.value == true ? false : true
-        }
-        else {
-            isSettingUp = false
-        }
+//        if !isSettingUp {
+//            row.value = row.value == true ? false : true
+//        }
+//        else {
+//            isSettingUp = false
+//        }
 
         backgroundColor = row.value == true ? selectedColor : nonSelectedColor
         
