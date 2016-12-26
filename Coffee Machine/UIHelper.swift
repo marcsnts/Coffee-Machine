@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MBProgressHUD
 
 class UIHelper {
     
@@ -15,6 +16,18 @@ class UIHelper {
     
     class func setTableViewColor(tableView: UITableView) {
         tableView.backgroundColor = Colors.IVORY
+    }
+    
+    class func successfulAnimation(view: UIView, text: String) {
+        
+        let hud = MBProgressHUD(view: view)
+        view.addSubview(hud)
+        hud.customView = UIImageView(image: UIImage(named: "Checkmark"))
+        hud.mode = .customView
+        hud.label.text = text
+        hud.show(animated: true)
+        hud.hide(animated: true, afterDelay: 1)
+
     }
     
 }

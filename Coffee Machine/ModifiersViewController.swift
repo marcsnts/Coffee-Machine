@@ -54,6 +54,8 @@ class ModifiersViewController: FormViewController {
         
         addOrderToBag()
         
+        UIHelper.successfulAnimation(view: (self.navigationController?.view)!, text: "Added to bag")
+        
     }
     
     private func addOrderToBag() {
@@ -66,7 +68,7 @@ class ModifiersViewController: FormViewController {
         if valuesDictionary["Small"] as? Bool == true {
             size = .Small
         }
-        else if valuesDictionary["Mediume"] as? Bool == true {
+        else if valuesDictionary["Medium"] as? Bool == true {
             size = .Medium
         }
         else {
