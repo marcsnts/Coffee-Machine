@@ -10,12 +10,11 @@ import UIKit
 import SnapKit
 import Eureka
 
-class ModifiersViewController: UIViewController {
+class ModifiersViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
 }

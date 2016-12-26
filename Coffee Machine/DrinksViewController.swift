@@ -15,16 +15,25 @@ class DrinksViewController: FormViewController {
     let modifiersSegue = "Modifiers"
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        setupNavigation()
+        setupForm()
+        
+    }
+    
+    private func setupNavigation() {
+        
+        self.title = "Marc's Coffee Machine"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+    }
+    
+    private func setupForm() {
         
         tableView?.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(self.view)
         }
-        self.title = "Marc's Coffee Machine"
-        setupForm()
-    }
-    
-    private func setupForm() {
         
         form = Section("Hot Drinks")
             <<< BeverageRow() { row in
