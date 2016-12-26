@@ -42,7 +42,7 @@ public class SelectCell : Cell<Bool>, CellType {
     private func setupCell() {
         
         title.text = row.title
-        title.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
+        title.font = UIHelper.CELL_FONT
         self.addSubview(title)
         
         title.snp.makeConstraints { (make) -> Void in

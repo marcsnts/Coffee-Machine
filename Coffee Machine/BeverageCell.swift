@@ -41,7 +41,7 @@ public class BeverageCell : Cell<HotDrink>, CellType{
         beverageImageView.contentMode = UIViewContentMode.scaleAspectFit
         beverageLabel.textAlignment = NSTextAlignment.center
         beveragePriceLabel.textAlignment = NSTextAlignment.center
-        beveragePriceLabel.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
+        beveragePriceLabel.font = UIHelper.CELL_FONT
         beveragePriceLabel.textColor = UIColor.darkGray
         
         switch beverage {

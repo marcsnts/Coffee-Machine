@@ -97,7 +97,7 @@ class ModifiersViewController: FormViewController {
                     return selectedDrink == .Coffee ? false : true
                 })
             }.cellSetup { cell, row in
-                cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
+                cell.textLabel?.font = UIHelper.CELL_FONT
                 cell.stepper.tintColor = Colors.ORANGE
                 cell.valueLabel.textColor = Colors.ORANGE
                 cell.stepper.maximumValue = 5
