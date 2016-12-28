@@ -12,7 +12,7 @@ class Temporary: NSObject {
     
     static let sharedInstance = Temporary()
     
-    var selectedDrink: HotDrink?
+    var selectedBeverage: Beverage?
     var order = [Beverage]()
     
 }

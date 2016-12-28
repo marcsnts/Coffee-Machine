@@ -85,23 +85,23 @@ class DrinksViewController: FormViewController {
         
         form = Section("Hot Drinks")
             <<< BeverageRow() { row in
-                row.value = HotDrink.Coffee
+                row.value = Coffee(size: .Small, sugar: 0)
                 }.onCellSelection { cell, row in
-                    Temporary.sharedInstance.selectedDrink = row.value
+                    Temporary.sharedInstance.selectedBeverage = row.value
                     self.performSegue(withIdentifier: self.modifiersSegue, sender: self)
             }
 
             <<< BeverageRow() { row in
-                row.value = HotDrink.HotChocolate
+                row.value = HotChocolate(size: .Small, whippedCream: false)
                 }.onCellSelection { cell, row in
-                    Temporary.sharedInstance.selectedDrink = row.value
+                    Temporary.sharedInstance.selectedBeverage = row.value
                     self.performSegue(withIdentifier: self.modifiersSegue, sender: self)
             }
             
             <<< BeverageRow() { row in
-                row.value = HotDrink.Cappuccino
+                row.value = Cappuccino(size: .Small)
                 }.onCellSelection { cell, row in
-                    Temporary.sharedInstance.selectedDrink = row.value
+                    Temporary.sharedInstance.selectedBeverage = row.value
                     self.performSegue(withIdentifier: self.modifiersSegue, sender: self)
             }
             +++ Section()

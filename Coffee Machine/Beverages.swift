@@ -14,13 +14,13 @@ enum BeverageSize: String {
     Large = "Large"
 }
 
-public enum HotDrink: String {
-    case Coffee = "Coffee",
-    HotChocolate = "Hot Chocolate",
-    Cappuccino = "Cappuccino"
-}
+//public enum HotDrink: String {
+//    case Coffee = "Coffee",
+//    HotChocolate = "Hot Chocolate",
+//    Cappuccino = "Cappuccino"
+//}
 
-class Beverage: NSObject {
+public class Beverage: NSObject {
     
     var size: BeverageSize
     var price: Double?
@@ -39,8 +39,11 @@ class Coffee: Beverage {
     init(size: BeverageSize, sugar: Int) {
         self.sugar = sugar
         super.init(size: size)
-        
-        switch self.size {
+        changeSize(size: size)
+    }
+    
+    func changeSize(size: BeverageSize) {
+        switch size {
         case .Large:
             self.price = Constants.COFFEE_LARGE_PRICE
         case .Medium:
@@ -48,18 +51,6 @@ class Coffee: Beverage {
         case .Small:
             self.price = Constants.COFFEE_SMALL_PRICE
         }
-    }
-    
-    func addSugar() {
-        self.sugar = self.sugar+1
-    }
-    
-    func removeSugar() {
-        guard self.sugar > 0 else {
-            print("No sugar to remove")
-            return
-        }
-        self.sugar = self.sugar-1
     }
 }
 
@@ -70,8 +61,11 @@ class HotChocolate: Beverage {
     init(size: BeverageSize, whippedCream: Bool) {
         self.whippedCream = whippedCream
         super.init(size: size)
-        
-        switch self.size {
+        changeSize(size: size)
+    }
+    
+    func changeSize(size: BeverageSize) {
+        switch size {
         case .Large:
             self.price = Constants.HOTCHOCOLATE_LARGE_PRICE
         case .Medium:
@@ -80,14 +74,7 @@ class HotChocolate: Beverage {
             self.price = Constants.HOTCHOCOLATE_SMALL_PRICE
         }
     }
-    
-    func addCream() {
-        self.whippedCream = true
-    }
-    
-    func removeCream() {
-        self.whippedCream = false
-    }
+ 
     
 }
 
@@ -95,8 +82,11 @@ class Cappuccino: Beverage {
     
     override init(size: BeverageSize) {
         super.init(size: size)
-        
-        switch self.size {
+        changeSize(size: size)
+    }
+    
+    func changeSize(size: BeverageSize) {
+        switch size {
         case .Large:
             self.price = Constants.CAPPUCCINO_LARGE_PRICE
         case .Medium:

@@ -16,11 +16,25 @@ class ModifiersViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let drink = Temporary.sharedInstance.selectedDrink {
-            self.title = drink.rawValue
-        }
+        
+        setupTitle()
         setupForm()
         setupAddToBagButton()
+    }
+    
+    private func setupTitle() {
+        if let drink = Temporary.sharedInstance.selectedBeverage {
+            switch drink {
+            case is Coffee:
+                self.title = "Coffee"
+            case is Cappuccino:
+                self.title = "Cappuccino"
+            case is HotChocolate:
+                self.title = "Hot Chocolate"
+            default:
+                self.title = nil
+            }
+        }
     }
     
     private func setupAddToBagButton() {
@@ -60,11 +74,12 @@ class ModifiersViewController: FormViewController {
     
     private func addOrderToBag() {
         
-        guard let selectedDrink = Temporary.sharedInstance.selectedDrink else {
+        guard let selectedBeverage = Temporary.sharedInstance.selectedBeverage else {
             return
         }
         
-        var size: BeverageSize
+        var size:BeverageSize
+        
         if valuesDictionary["Small"] as? Bool == true {
             size = .Small
         }
@@ -75,19 +90,30 @@ class ModifiersViewController: FormViewController {
             size = .Large
         }
         
-        
-        switch selectedDrink {
-        case .Cappuccino:
-            Temporary.sharedInstance.order.append(Cappuccino(size: size))
-        case .Coffee:
-            if let sugar = valuesDictionary["Sugar"] as? Double {
-                Temporary.sharedInstance.order.append(Coffee(size: size, sugar: Int(sugar)))
+        switch type(of: selectedBeverage) {
+        case is Cappuccino.Type:
+            if let cappuccino = selectedBeverage as? Cappuccino {
+                cappuccino.changeSize(size: size)
+                Temporary.sharedInstance.order.append(cappuccino)
             }
-        case .HotChocolate:
-            if let whippedCream = valuesDictionary["WhippedCream"] as? Bool {
-                Temporary.sharedInstance.order.append(HotChocolate(size: size, whippedCream: whippedCream))
+        case is Coffee.Type:
+            if let coffee = selectedBeverage as? Coffee, let sugar = valuesDictionary["Sugar"] as? Double {
+                coffee.changeSize(size: size)
+                coffee.sugar = Int(sugar)
+                Temporary.sharedInstance.order.append(coffee)
             }
+        case is HotChocolate.Type:
+            if let hotchocolate = selectedBeverage as? HotChocolate, let whippedCream = valuesDictionary["WhippedCream"] as? Bool {
+                hotchocolate.changeSize(size: size)
+                hotchocolate.whippedCream = whippedCream
+                Temporary.sharedInstance.order.append(hotchocolate)
+            }
+        default:
+            break
         }
+        
+        //Reset selected beverage
+        Temporary.sharedInstance.selectedBeverage = nil
         
         _ = navigationController?.popViewController(animated: true)
         
@@ -95,7 +121,7 @@ class ModifiersViewController: FormViewController {
     
     private func setupForm() {
         
-        guard let selectedDrink = Temporary.sharedInstance.selectedDrink, let tableView = tableView else {
+        guard let selectedBeverage = Temporary.sharedInstance.selectedBeverage, let tableView = tableView else {
             return
         }
         
@@ -122,7 +148,7 @@ class ModifiersViewController: FormViewController {
             }
             
             <<< SelectRow("Medium") {
-                let priceDifference = getSizePriceDifference(type: selectedDrink, size1: .Small, size2: .Medium)
+                let priceDifference = getSizePriceDifference(beverage: selectedBeverage, size1: .Small, size2: .Medium)
                 $0.title = "Medium +$\(String(format: "%.2f", priceDifference))"
                 $0.value = false
             }.onCellSelection { cell, row in
@@ -130,7 +156,7 @@ class ModifiersViewController: FormViewController {
             }
             
             <<< SelectRow("Large") {
-                let priceDifference = getSizePriceDifference(type: selectedDrink, size1: .Small, size2: .Large)
+                let priceDifference = getSizePriceDifference(beverage: selectedBeverage, size1: .Small, size2: .Large)
                 $0.title = "Large +$\(String(format: "%.2f", priceDifference))"
                 $0.value = false
             }.onCellSelection { cell, row in
@@ -140,7 +166,7 @@ class ModifiersViewController: FormViewController {
             +++ Section("Add-ons") {
                 //Hide this section if cappuccino
                 $0.hidden = Condition.function(["Medium"], { form in
-                    return selectedDrink == .Cappuccino ? true : false
+                    return type(of: selectedBeverage) == type(of: Cappuccino.self) ? true : false
                 })
             }
             <<< StepperRow("Sugar") {
@@ -148,7 +174,7 @@ class ModifiersViewController: FormViewController {
                 $0.value = 0
                 //Hide if not coffee
                 $0.hidden = Condition.function(["Medium"], { form in
-                    return selectedDrink == .Coffee ? false : true
+                    return type(of: selectedBeverage) == type(of: Coffee(size: .Small, sugar: 0)) ? false : true
                 })
             }.cellSetup { cell, row in
                 cell.textLabel?.font = UIHelper.CELL_FONT
@@ -165,7 +191,7 @@ class ModifiersViewController: FormViewController {
                 $0.value = false
                 //Hide if not hot chocolate
                 $0.hidden = Condition.function(["Medium"], { form in
-                    return selectedDrink == .HotChocolate ? false : true
+                    return type(of: selectedBeverage) == type(of: HotChocolate(size: .Small, whippedCream: false)) ? false : true
                 })
             }.onCellSelection { cell, row in
                 self.updateSelectRow(cell: cell, row: row)
@@ -203,7 +229,7 @@ class ModifiersViewController: FormViewController {
         
     }
     
-    private func getSizePriceDifference(type: HotDrink, size1: BeverageSize, size2: BeverageSize) -> Double {
+    private func getSizePriceDifference(beverage: Beverage, size1: BeverageSize, size2: BeverageSize) -> Double {
         
         guard size1 != size2 else {
             return 0
@@ -212,8 +238,8 @@ class ModifiersViewController: FormViewController {
         var size1Price = 0.00
         var size2Price = 0.00
         
-        switch type {
-        case .Cappuccino:
+        switch beverage {
+        case is Cappuccino:
             switch size1 {
             case .Large:
                 size1Price = Constants.CAPPUCCINO_LARGE_PRICE
@@ -230,7 +256,7 @@ class ModifiersViewController: FormViewController {
             case .Small:
                 size2Price = Constants.CAPPUCCINO_SMALL_PRICE
             }
-        case .Coffee:
+        case is Coffee:
             switch size1 {
             case .Large:
                 size1Price = Constants.COFFEE_LARGE_PRICE
@@ -247,7 +273,7 @@ class ModifiersViewController: FormViewController {
             case .Small:
                 size2Price = Constants.COFFEE_SMALL_PRICE
             }
-        case .HotChocolate:
+        case is HotChocolate:
             switch size1 {
             case .Large:
                 size1Price = Constants.HOTCHOCOLATE_LARGE_PRICE
@@ -264,6 +290,8 @@ class ModifiersViewController: FormViewController {
             case .Small:
                 size2Price = Constants.HOTCHOCOLATE_SMALL_PRICE
             }
+        default:
+            return 0
         }
         
         return size2Price - size1Price
