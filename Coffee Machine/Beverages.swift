@@ -26,42 +26,8 @@ class Beverage: NSObject {
     var price: Double?
     
     init(size: BeverageSize) {
-
         self.size = size
-        super.init()
-        
-        switch self {
-        case is Cappuccino:
-            switch self.size {
-            case .Large:
-                self.price = Constants.CAPPUCCINO_LARGE_PRICE
-            case .Medium:
-                self.price = Constants.CAPPUCCINO_MEDIUM_PRICE
-            case .Small:
-                self.price = Constants.CAPPUCCINO_SMALL_PRICE
-            }
-        case is Coffee:
-            switch self.size {
-            case .Large:
-                self.price = Constants.COFFEE_LARGE_PRICE
-            case .Medium:
-                self.price = Constants.COFFEE_MEDIUM_PRICE
-            case .Small:
-                self.price = Constants.COFFEE_SMALL_PRICE
-            }
-        case is HotChocolate:
-            switch self.size {
-            case .Large:
-                self.price = Constants.HOTCHOCOLATE_LARGE_PRICE
-            case .Medium:
-                self.price = Constants.HOTCHOCOLATE_MEDIUM_PRICE
-            case .Small:
-                self.price = Constants.HOTCHOCOLATE_SMALL_PRICE
-            }
-        default:
-            self.price = nil
-            break
-        }
+        self.price = nil
     }
         
 }
@@ -73,6 +39,15 @@ class Coffee: Beverage {
     init(size: BeverageSize, sugar: Int) {
         self.sugar = sugar
         super.init(size: size)
+        
+        switch self.size {
+        case .Large:
+            self.price = Constants.COFFEE_LARGE_PRICE
+        case .Medium:
+            self.price = Constants.COFFEE_MEDIUM_PRICE
+        case .Small:
+            self.price = Constants.COFFEE_SMALL_PRICE
+        }
     }
     
     func addSugar() {
@@ -95,6 +70,15 @@ class HotChocolate: Beverage {
     init(size: BeverageSize, whippedCream: Bool) {
         self.whippedCream = whippedCream
         super.init(size: size)
+        
+        switch self.size {
+        case .Large:
+            self.price = Constants.HOTCHOCOLATE_LARGE_PRICE
+        case .Medium:
+            self.price = Constants.HOTCHOCOLATE_MEDIUM_PRICE
+        case .Small:
+            self.price = Constants.HOTCHOCOLATE_SMALL_PRICE
+        }
     }
     
     func addCream() {
@@ -108,6 +92,19 @@ class HotChocolate: Beverage {
 }
 
 class Cappuccino: Beverage {
+    
+    override init(size: BeverageSize) {
+        super.init(size: size)
+        
+        switch self.size {
+        case .Large:
+            self.price = Constants.CAPPUCCINO_LARGE_PRICE
+        case .Medium:
+            self.price = Constants.CAPPUCCINO_MEDIUM_PRICE
+        case .Small:
+            self.price = Constants.CAPPUCCINO_SMALL_PRICE
+        }
+    }
     
 }
 
