@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 class Constants {
     
@@ -23,4 +22,5 @@ class Constants {
     static let HOTCHOCOLATE_MEDIUM_PRICE = 2.49
     static let HOTCHOCOLATE_LARGE_PRICE = 2.99
     
+    static let TAX = 13.00 //lol canadian
 }

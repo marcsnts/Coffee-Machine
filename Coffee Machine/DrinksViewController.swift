@@ -13,6 +13,7 @@ import Eureka
 class DrinksViewController: FormViewController {
         
     let modifiersSegue = "Modifiers"
+    let orderSegue = "Cart"
     let orderButton = UIButton()
 
     override func viewDidLoad() {
@@ -50,14 +51,16 @@ class DrinksViewController: FormViewController {
     
     func orderTapped(sender: UIButton!) {
         UIView.animate(withDuration: 0.6, animations: {
-            sender.alpha = 0.5
-            sender.titleLabel?.alpha = 0.5
+            sender.alpha = 0.4
+            sender.titleLabel?.alpha = 0.2
         })
         
         UIView.animate(withDuration: 0.6, animations: {
             sender.alpha = 1
             sender.titleLabel?.alpha = 1
         })
+        
+        self.performSegue(withIdentifier: orderSegue, sender: self)
     }
     
     private func setupNavigation() {
@@ -83,7 +86,7 @@ class DrinksViewController: FormViewController {
             cell.backgroundColor = Colors.CREAM
         }
         
-        form = Section("Hot Drinks")
+        form = Section("Hot drinks")
             <<< BeverageRow() { row in
                 row.value = Coffee(size: .Small, sugar: 0)
                 }.onCellSelection { cell, row in

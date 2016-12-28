@@ -7,20 +7,32 @@
 //
 
 import UIKit
+import Eureka
 
-class CartViewController: UIViewController {
-
+class CartViewController: FormViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.title = "My order"
+        
+        setupForm()
+        
     }
     
-
+    private func setupForm() {
+        
+        guard let tableView = tableView else {
+            return
+        }
+        
+        UIHelper.setTableViewColor(tableView: tableView)
+        
+        tableView.snp.makeConstraints { (make) -> Void in
+            make.edges.equalTo(self.view)
+        }
+        
+        
+        
+    }
 
 }

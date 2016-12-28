@@ -30,7 +30,7 @@ class ModifiersViewController: FormViewController {
             case is Cappuccino:
                 self.title = "Cappuccino"
             case is HotChocolate:
-                self.title = "Hot Chocolate"
+                self.title = "Hot chocolate"
             default:
                 self.title = nil
             }
@@ -57,8 +57,8 @@ class ModifiersViewController: FormViewController {
     func addToBagTapped(sender: UIButton!) {
         
         UIView.animate(withDuration: 0.6, animations: {
-            sender.alpha = 0.5
-            sender.titleLabel?.alpha = 0.5
+            sender.alpha = 0.4
+            sender.titleLabel?.alpha = 0.2
         })
         
         UIView.animate(withDuration: 0.6, animations: {
@@ -124,9 +124,7 @@ class ModifiersViewController: FormViewController {
         guard let selectedBeverage = Temporary.sharedInstance.selectedBeverage, let tableView = tableView else {
             return
         }
-        
-        let sweg = Cappuccino.Type.self
-        
+                
         UIHelper.setTableViewColor(tableView: tableView)
         
         tableView.snp.makeConstraints { (make) -> Void in
