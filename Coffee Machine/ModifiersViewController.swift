@@ -125,6 +125,8 @@ class ModifiersViewController: FormViewController {
             return
         }
         
+        let sweg = Cappuccino.Type.self
+        
         UIHelper.setTableViewColor(tableView: tableView)
         
         tableView.snp.makeConstraints { (make) -> Void in
@@ -166,7 +168,7 @@ class ModifiersViewController: FormViewController {
             +++ Section("Add-ons") {
                 //Hide this section if cappuccino
                 $0.hidden = Condition.function(["Medium"], { form in
-                    return type(of: selectedBeverage) == type(of: Cappuccino.self) ? true : false
+                    return type(of: selectedBeverage) != type(of: Cappuccino(size: .Small)) ? false : true
                 })
             }
             <<< StepperRow("Sugar") {
