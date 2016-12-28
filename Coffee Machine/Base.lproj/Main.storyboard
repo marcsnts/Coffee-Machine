@@ -50,6 +50,7 @@
                     <connections>
                         <outlet property="tableView" destination="VcD-MH-ENP" id="Gdt-ic-7aJ"/>
                         <segue destination="3d8-KJ-CvZ" kind="show" identifier="Modifiers" id="ZYQ-Jk-KO8"/>
+                        <segue destination="Cw1-Jh-BsW" kind="show" identifier="Cart" id="a6R-do-vzw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnm-vR-6G5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -78,11 +79,30 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="EnK-mO-GZL" id="dDX-zk-ZXu"/>
+                        <segue destination="Cw1-Jh-BsW" kind="show" identifier="Cart" id="hYD-8M-h5s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gq1-9K-htt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2660" y="35.532233883058474"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RUp-mD-6ZQ">
+            <objects>
+                <viewController id="Cw1-Jh-BsW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mlz-OG-p47"/>
+                        <viewControllerLayoutGuide type="bottom" id="5cf-F8-65o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Efn-OC-p0t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l62-aJ-gPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="798"/>
         </scene>
         <!--Drinks Navigation Controller-->
         <scene sceneID="Xm4-Dc-7tM">
@@ -103,4 +123,7 @@
             <point key="canvasLocation" x="832.79999999999995" y="35.532233883058474"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hYD-8M-h5s"/>
+    </inferredMetricsTieBreakers>
 </document>

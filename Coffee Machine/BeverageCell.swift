@@ -47,6 +47,9 @@ public class BeverageCell : Cell<HotDrink>, CellType{
         switch beverage {
         case .Cappuccino:
             beverageImageView.image = UIImage(named: "cappuccino")
+            guard let beverage = beverage as? Cappuccino else {
+                return
+            }
             beverageLabel.text = "Cappuccino"
             beveragePriceLabel.text = "$\(Constants.CAPPUCCINO_SMALL_PRICE)"
         case .Coffee:
