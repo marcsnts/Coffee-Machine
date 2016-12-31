@@ -31,7 +31,15 @@ class CartViewController: FormViewController {
             make.edges.equalTo(self.view)
         }
         
+        let orderSection = Section("My Order")
         
+        for beverage in Temporary.sharedInstance.order {
+            orderSection <<< BeverageRow() {
+                $0.value = beverage
+            }
+        }
+        
+        form +++ orderSection
         
     }
 

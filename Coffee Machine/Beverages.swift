@@ -43,6 +43,7 @@ class Coffee: Beverage {
     }
     
     func changeSize(size: BeverageSize) {
+        self.size = size
         switch size {
         case .Large:
             self.price = Constants.COFFEE_LARGE_PRICE
@@ -65,6 +66,7 @@ class HotChocolate: Beverage {
     }
     
     func changeSize(size: BeverageSize) {
+        self.size = size
         switch size {
         case .Large:
             self.price = Constants.HOTCHOCOLATE_LARGE_PRICE
@@ -86,6 +88,7 @@ class Cappuccino: Beverage {
     }
     
     func changeSize(size: BeverageSize) {
+        self.size = size
         switch size {
         case .Large:
             self.price = Constants.CAPPUCCINO_LARGE_PRICE
