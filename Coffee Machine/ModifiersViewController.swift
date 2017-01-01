@@ -68,7 +68,7 @@ class ModifiersViewController: FormViewController {
         
         addOrderToBag()
         
-        UIHelper.successfulAnimation(view: (self.navigationController?.view)!, text: "Added to bag")
+        UIHelper.successfulAnimation(text: "Added to bag!")
         
     }
     

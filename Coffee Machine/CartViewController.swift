@@ -16,6 +16,41 @@ class CartViewController: FormViewController {
         self.title = "My order"
         
         setupForm()
+        setupCheckoutButton()
+        
+    }
+    
+    private func setupCheckoutButton() {
+        let checkoutButton = UIButton()
+        
+        checkoutButton.backgroundColor = Colors.ORANGE
+        checkoutButton.setTitle("CHECKOUT", for: UIControlState.normal)
+        checkoutButton.addTarget(self, action: #selector(CartViewController.checkoutTapped(sender:)), for: UIControlEvents.touchUpInside)
+        view.addSubview(checkoutButton)
+        
+        checkoutButton.snp.makeConstraints { (make) -> Void in
+            make.bottom.equalToSuperview()
+            make.height.equalTo(60)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview()
+        }
+        
+    }
+    
+    func checkoutTapped(sender: UIButton!) {
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            sender.alpha = 0.4
+            sender.titleLabel?.alpha = 0.2
+        })
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            sender.alpha = 1
+            sender.titleLabel?.alpha = 1
+        })
+        
+        UIHelper.loadingAnimation(text: "Processing your order")
+        //UIHelper.successfulAnimation(view: (self.navigationController?.view)!, text: "Added to bag")
         
     }
     
@@ -28,7 +63,7 @@ class CartViewController: FormViewController {
         UIHelper.setTableViewColor(tableView: tableView)
         
         tableView.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(self.view)
+            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 60, 0))
         }
         
         form +++ makeTotalSection()
