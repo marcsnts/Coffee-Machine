@@ -89,24 +89,20 @@ class ModifiersViewController: FormViewController {
         else {
             size = .Large
         }
-        
+
         switch type(of: selectedBeverage) {
         case is Cappuccino.Type:
-            if let cappuccino = selectedBeverage as? Cappuccino {
-                cappuccino.changeSize(size: size)
-                Temporary.sharedInstance.order.append(cappuccino)
-            }
+            //Create cappuccino object and append to order
+            Temporary.sharedInstance.order.append(Cappuccino(size: size))
         case is Coffee.Type:
-            if let coffee = selectedBeverage as? Coffee, let sugar = valuesDictionary["Sugar"] as? Double {
-                coffee.changeSize(size: size)
-                coffee.sugar = Int(sugar)
-                Temporary.sharedInstance.order.append(coffee)
+            //Create coffee object and append to order
+            if let sugar = valuesDictionary["Sugar"] as? Double {
+                Temporary.sharedInstance.order.append(Coffee(size: size, sugar: Int(sugar)))
             }
         case is HotChocolate.Type:
-            if let hotchocolate = selectedBeverage as? HotChocolate, let whippedCream = valuesDictionary["WhippedCream"] as? Bool {
-                hotchocolate.changeSize(size: size)
-                hotchocolate.whippedCream = whippedCream
-                Temporary.sharedInstance.order.append(hotchocolate)
+            //Create hotchocolate object and append to order
+            if let whippedCream = valuesDictionary["WhippedCream"] as? Bool {
+                Temporary.sharedInstance.order.append(HotChocolate(size: size, whippedCream: whippedCream))
             }
         default:
             break

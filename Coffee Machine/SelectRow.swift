@@ -27,13 +27,6 @@ public class SelectCell : Cell<Bool>, CellType {
         
         let nonSelectedColor = Colors.CREAM
         let selectedColor = Colors.ORANGE
-        
-//        if !isSettingUp {
-//            row.value = row.value == true ? false : true
-//        }
-//        else {
-//            isSettingUp = false
-//        }
 
         backgroundColor = row.value == true ? selectedColor : nonSelectedColor
         
