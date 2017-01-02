@@ -5,7 +5,12 @@
 Simple coffee machine application that simulates ordering coffee from an interactive menu. 
 
 ## Purpose
+<<<<<<< HEAD
 The purpose of this project is to display object-oriented concepts, REST networking, dependancy managers, auto layout and UI/UX.
+=======
+The purpose of this project is to display the object-oriented paradigm and HTTP RESTful networking.
+>>>>>>> origin/master
 
 ## Requirements
 + XCode 8
++ iOS 8.2+
