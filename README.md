@@ -9,3 +9,4 @@ The purpose of this project is to display object-oriented concepts and REST netw
 
 ## Requirements
 + XCode 8
++ iOS 8.2+
