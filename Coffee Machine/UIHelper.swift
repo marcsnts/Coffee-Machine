@@ -36,7 +36,11 @@ class UIHelper {
         SVProgressHUD.setDefaultMaskType(.none)
         SVProgressHUD.setDefaultAnimationType(.native)
         SVProgressHUD.showSuccess(withStatus: text)
-        SVProgressHUD.dismiss(withDelay: 0.75)
+        SVProgressHUD.dismiss(withDelay: 0.9)
+    }
+    
+    class func failureAnimation(text: String) {
+        SVProgressHUD.showError(withStatus: text)
     }
     
 }

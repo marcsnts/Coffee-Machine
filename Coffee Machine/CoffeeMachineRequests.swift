@@ -23,8 +23,10 @@ extension NetworkRequest {
             case .success(let value):
                 let json = JSON(value)
                 print("JSON: \(json)")
+                UIHelper.successfulAnimation(text: "Order submitted!")
             case .failure(let error):
                 print(error)
+                UIHelper.failureAnimation(text: "Failed to send order")
             }
         }
 

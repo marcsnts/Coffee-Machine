@@ -201,6 +201,7 @@ class ModifiersViewController: FormViewController {
     private func updateSelectRow(cell: SelectCell, row: SelectRow) {
         row.value = row.value == true ? false : true
         cell.update()
+        valuesDictionary = form.values()
     }
     
     private func updateSizeRow(cell: SelectCell, row: SelectRow) {
