@@ -10,7 +10,7 @@
 		491BBD2A1E19C38A009C9FA6 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491BBD291E19C38A009C9FA6 /* SVProgressHUD.framework */; };
 		491BBD2C1E19CA73009C9FA6 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491BBD2B1E19CA73009C9FA6 /* NetworkRequest.swift */; };
 		491BBD2E1E19ECAA009C9FA6 /* CoffeeMachineRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491BBD2D1E19ECAA009C9FA6 /* CoffeeMachineRequests.swift */; };
-		491BBD311E1A38A2009C9FA6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491BBD301E1A38A2009C9FA6 /* SwiftyJSON.framework */; };
+		491BBD321E1A3B4C009C9FA6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491BBD301E1A38A2009C9FA6 /* SwiftyJSON.framework */; };
 		49686BA51E10FA09005EC314 /* SelectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49686BA41E10FA09005EC314 /* SelectRow.swift */; };
 		49686BA71E10FA7A005EC314 /* SelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49686BA61E10FA7A005EC314 /* SelectCell.xib */; };
 		49686BA91E113055005EC314 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49686BA81E113055005EC314 /* Colors.swift */; };
@@ -69,8 +69,8 @@
 			files = (
 				49700AF01E0B09110008D903 /* SnapKit.framework in Frameworks */,
 				491BBD2A1E19C38A009C9FA6 /* SVProgressHUD.framework in Frameworks */,
+				491BBD321E1A3B4C009C9FA6 /* SwiftyJSON.framework in Frameworks */,
 				49700AFB1E0B10A40008D903 /* Eureka.framework in Frameworks */,
-				491BBD311E1A38A2009C9FA6 /* SwiftyJSON.framework in Frameworks */,
 				49686BAD1E11581D005EC314 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

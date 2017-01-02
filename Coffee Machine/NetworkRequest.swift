@@ -16,7 +16,7 @@ enum NetworkRequestType: String {
 
 class NetworkRequest {
     
-    class func createRequest(requestType: NetworkRequestType, url: String, data: [String:Any]?) -> URLRequest? {
+    class func createRequest(requestType: NetworkRequestType, url: String, data: [[String:Any]]?) -> URLRequest? {
         
         guard let url = URL(string: url) else {
             return nil

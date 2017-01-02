@@ -52,6 +52,36 @@ class CartViewController: FormViewController {
 
         UIHelper.loadingAnimation(text: "Processing your order")
         
+        var orderDictionary = [[String: Any]]()
+        
+        for beverage in Temporary.sharedInstance.order {
+            switch type(of: beverage) {
+            case is HotChocolate.Type:
+                if let beverage = beverage as? HotChocolate {
+                    orderDictionary.append([
+                        "drink": "hotchocolate",
+                        "size": beverage.size.rawValue,
+                        "whippedcream": beverage.whippedCream
+                    ])
+                }
+            case is Coffee.Type:
+                if let beverage = beverage as? Coffee {
+                    orderDictionary.append([
+                        "drink": "coffee",
+                        "size": beverage.size.rawValue,
+                        "sugar": beverage.sugar
+                    ])
+                }
+            case is Cappuccino.Type:
+                orderDictionary.append([
+                    "drink": "cappuccino",
+                    "size": beverage.size.rawValue
+                ])
+            default: break
+            }
+        }
+        
+        NetworkRequest.postOrder(order: orderDictionary)
     }
     
     private func setupForm() {

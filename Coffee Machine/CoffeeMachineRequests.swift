@@ -8,20 +8,26 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 extension NetworkRequest {
     
-    class func postOrder(order: [String: Any]) {
+    class func postOrder(order: [[String: Any]]) {
         
         guard let postOrderRequest = createRequest(requestType: .POST, url: Constants.POST_ENDPOINT, data: order) else {
             return
         }
         
-        Alamofire.request(postOrderRequest).responseJSON { response in
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
+        Alamofire.request(postOrderRequest).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+            case .failure(let error):
+                print(error)
             }
         }
+
     }
     
 }

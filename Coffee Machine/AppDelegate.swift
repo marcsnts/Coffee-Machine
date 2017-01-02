@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = Colors.BURGUNDY
         UINavigationBar.appearance().tintColor = Colors.DARK_BROWN
         
-        NetworkRequest.postOrder(order: ["Asdfadfs": "sadfadf"])
         return true
     }
 
