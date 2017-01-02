@@ -23,4 +23,10 @@ class Constants {
     static let HOTCHOCOLATE_LARGE_PRICE = 2.99
     
     static let TAX = 0.13 //lol canadian
+    
+    //These are open endpoints for showcase purpose
+    static let BASE_ENDPOINT = "https://httpbin.org/"
+    static let POST_ENDPOINT = "https://httpbin.org/post"
+    static let GET_ENDPOINT = "https://httpbin.org/get"
+    
 }

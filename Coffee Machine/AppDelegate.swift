@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().barTintColor = Colors.BURGUNDY
         UINavigationBar.appearance().tintColor = Colors.DARK_BROWN
-        // Override point for customization after application launch.
+        
+        NetworkRequest.postOrder(order: ["Asdfadfs": "sadfadf"])
         return true
     }
 

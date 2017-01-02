@@ -48,9 +48,9 @@ class CartViewController: FormViewController {
             sender.alpha = 1
             sender.titleLabel?.alpha = 1
         })
-        
+
+
         UIHelper.loadingAnimation(text: "Processing your order")
-        //UIHelper.successfulAnimation(view: (self.navigationController?.view)!, text: "Added to bag")
         
     }
     
